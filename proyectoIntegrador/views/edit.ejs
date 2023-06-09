@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Global site tag (gtag.js) - le estoy metiendo Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=UA-152881111-1"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-152881111-1');
+		</script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="utf-8" />
+		<title>Proyecto integrador</title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/stylesheets/resena.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css"
+		/>
+
+		<!-- JAVA -->
+		<!-- uikit -->
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+		<!-- script nuestro -->
+		<script type="text/javascript" src="/javascripts/java.js"></script>
+		<script src="https://kit.fontawesome.com/4710dd3a67.js"></script>
+		<script
+			type="text/javascript"
+			src="/javascripts/tres-caracteres.js"
+		></script>
+		<script type="text/javascript" src="/javascripts/avanzado-api.js"></script>
+		<script type="text/javascript" src="/javascripts/tarde.js"></script>
+		<!-- <script src="js/discover.js" charset="utf-8"></script> -->
+	</head>
+	<body>
+		<!--HEADER-->
+		<%- include('./partials/head') %>
+		<main>
+			<div
+				class="Resenas uk-flex uk-flex-column"
+				style="display: flex; align-items: center; justify-content: center;"
+			>
+				<h2 class="primero"><strong>Edite su resena aqui.</strong></h2>
+				<form
+					action="/login/edit/<%=resena.resena_id%>"
+					method="POST"
+					class="resenas"
+				>
+					<div style="display: none;">
+						<input
+							type="email"
+							name="email"
+							placeholder="EMAIL    EJ:PEPITO@GMAIL.COM"
+							autofocus
+						/>
+					</div>
+					<div style="display: none;">
+						<input type="password" name="password" placeholder="PASSWORD" />
+					</div>
+					<div>
+						<input
+							type="text"
+							name="title"
+							value="<%= resena.title %>"
+							placeholder="Title"
+							autofocus
+						/>
+					</div>
+					<div>
+						<textarea name="description" rows="2" placeholder="Description">
+<%= resena.description %></textarea
+						>
+					</div>
+					<div>
+						<input
+							type="number"
+							min="0"
+							max="10"
+							name="rating"
+							value="<%= resena.rating %>"
+							placeholder="Rating"
+						/>
+					</div>
+					<div>
+						<button class="uk-button uk-button-primary" type="submit" style="width: 100%;margin-bottom: 1vw;">
+							Guardar
+						</button>
+					</div>
+				</form>
+				<a href="/login">
+					<button
+					class="uk-button uk-button-danger uk-modal-close"
+					type="Cancel"
+					style="width: 56vw;margin-bottom: vw;border-radius: 9px;"
+				>
+					CANCEL
+				</button>
+				</a>
+				<br><br>
+			</div>
+		</main>
+		<!-- FOOTER -->
+		<%- include('./partials/footer') %>
+	</body>
+</html>

@@ -1,0 +1,82 @@
+.resenas input,
+.resenas textarea {
+	width: 56vw;
+	height: 7vh;
+	margin-bottom: 1vw;
+	border-radius: 9px;
+}
+.resenas button {
+	width: 28vw;
+	border-radius: 9px;
+}
+
+.resena-infoSerie {
+	width: 56vw;
+	color: rgba(250, 250, 250, 0.6);
+}
+.img_resena {
+	width: 25%;
+}
+.botones-resena {
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom: 2vw;
+}
+
+/*CSS de las resenas mostradas*/
+
+#caja-resena {
+	background-color: black;
+	margin-left: 20%;
+	margin-right: 20%;
+	width: 60%;
+}
+#caja-resena:hover {
+	transform: scale(1.02);
+	border-radius: 10px;
+}
+
+#caja-resena div h3 {
+	color: rgba(56, 240, 148, 0.85);
+	margin-top: -5px;
+}
+
+#caja-resena div p {
+	font-size: large;
+}
+
+#resena-general{
+	width: 100%;
+}
+
+.titulo-resena{
+	margin-left: 0;
+}
+/*Resenas Administrador*/
+
+#eliminar-admin{
+	width: 60%;
+	margin-left: 20%;
+	height: 6vh;
+}
+
+#eliminar-admin button{
+	width: 100%;
+	height: 100%;
+}
+
+/*Mis Resenas En el perfil*/
+.eliminar-editar{
+    display: flex;
+	margin-left: 20%;
+	margin-right: 20%;
+	justify-content: space-between;
+}
+.eliminar-editar form{
+	width: 29vw;
+}
+
+.eliminar-editar form button{
+	width: 100%;
+	border-radius: 9px;
+}

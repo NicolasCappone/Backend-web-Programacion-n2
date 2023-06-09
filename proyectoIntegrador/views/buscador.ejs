@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<!-- Global site tag (gtag.js) - le estoy metiendo Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152881111-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-152881111-1');
+		</script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="utf-8" />
+		<!-- Bootstrap CSS -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+		<link rel="stylesheet" href="/stylesheets/resultados.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css"
+		/>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+		<link rel="stylesheet" href="/stylesheets/resena.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="/stylesheets/resultados.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+		<title>Busqueda avanzada</title>
+
+		<!-- uikit -->
+		<script src="/javascripts/favoritos.js" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+		<script type="text/javascript" src="/javascripts/tres-caracteres.js"></script>
+		<script type="text/javascript" src="/javascripts/avanzado-api.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+		<script type="text/javascript" src="/javascripts/resultados.js"></script>
+		<script type="text/javascript" src="/javascripts/tres-caracteres.js"></script>
+		<script type="text/javascript" src="/javascripts/avanzado-api.js"></script>
+	</head>
+	<body>
+		<%- include('./partials/head') %>
+		<br />
+		<br />
+		<br />
+		<main class="nico"><h1>USUARIOS</h1></main>
+		<br />
+		<main>
+			<% for(let i = 0; i < name.length; i ++) { %>
+			<div class="uk-card uk-card-default uk-width-1-2@m" id="caja-resena">
+				<div class="uk-card-header">
+					<div class="uk-grid-small uk-flex-middle" uk-grid>
+						<div class="uk-width-expand">
+							<h3 class="uk-card-title uk-margin-remove-bottom" style="text-align: center;"><%=name[i].username%></h3>
+						</div>
+					</div>
+				</div>
+				<div class="uk-card-header">
+					<h3>Nombre completo:</h3>
+					<p><strong><%=name[i].fullname%></strong></p>
+				</div>
+				<div class="uk-card-header">
+					<h3>Cumpleaños:</h3>
+					<p><strong><%=name[i].birthday%></strong></p>
+				</div>
+				<div class="uk-card-header">
+					<h3>Email:</h3>
+					<p><strong><%=name[i].email%></strong></p>
+				</div>
+				<% if (name[i].genero_id == null) { %>
+				<div class="uk-card-header">
+					<strong>No tiene un genero Favorito</strong>
+				</div>
+				<% } else { %>
+				<div class="uk-card-header">
+					<a href="/series_xgenero?id=<%=name[i].genero_id%>">Ver genero Favorito</a>
+				</div>
+				<% } %> <% if (name[i].serie_favorita == null) { %>
+				<div class="uk-card-header">
+					<strong>No tiene una serie Favorita</strong>
+				</div>
+				<% } else { %>
+				<div class="uk-card-header">
+					<a href="/resultados?busqueda=<%=name[i].serie_favorita%>">Busca mi serie favorita:</a>
+				</div>
+				<% } %>
+				<div class="uk-card-footer">
+					<a href="/reseniasXuser?idXuser=<%=name[i].user_id%>">Mostrar reseñas de usuario</a>
+				</div>
+			</div>
+			<br /><br />
+			<% } %>
+			<br />
+			<br />
+			<br />
+		</main>
+		<main>
+			<h1 id="titulos" class="primero">
+				<!-- Busqueda -->
+			</h1>
+			<div class="div-resultados">
+				<ul class="resultados">
+					<!-- api -->
+				</ul>
+			</div>
+		</main>
+		<%- include('./partials/footer') %>
+	</body>
+</html>
+<!-- aslkdnasod -->

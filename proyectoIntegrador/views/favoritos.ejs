@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <!-- Global site tag (gtag.js) - le estoy metiendo Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152881111-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-152881111-1');
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/stylesheets/favoritos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+  <title>Favoritos</title>
+  <script src="/javascripts/favoritos.js" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+  <script type="text/javascript" src="/javascripts/tres-caracteres.js"></script>
+  <script type="text/javascript" src="/javascripts/avanzado-api.js"></script>
+
+  </script>
+</head>
+<body>
+  <!--HEADER-->
+<%- include('./partials/head') %>
+  <main>
+
+    <h2 id="titulos" class="primero">Favoritos</h2>
+    <ul class="seriesfavoritas">
+
+    </ul>
+
+    <h3 id="Cartel_nolog">Tiene que estar logeado para ver los favoritos</h3>
+
+
+
+  </main>
+  <!-- FOOTER -->
+  <%- include('./partials/footer') %>
+</body>
+
+</html>
